@@ -36,7 +36,9 @@ const prettyTime = computed(() => {
       .add(2, 'hour')
     remaining.value = timeInNextWeek.diff(now.value)
   }
-  return prettyMs(remaining.value)
+  return prettyMs(remaining.value, {
+    secondsDecimalDigits: 0,
+  })
 })
 
 onMounted(() => {
