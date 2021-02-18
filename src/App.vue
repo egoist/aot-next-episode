@@ -20,7 +20,7 @@ const tip = isChinese
   ? `根据中文字幕发布时间预估`
   : `Based on the release time of English Sub`
 
-const now = ref(dayjs().tz('Asia/Shanghai')
+const now = ref(dayjs().tz('Asia/Shanghai'))
 
 const prettyTime = computed(() => {
   const timeInThisWeek = now.value.startOf('week').add(2, 'hour')
