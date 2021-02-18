@@ -8,6 +8,10 @@ dayjs.extend(timezone)
 
 dayjs.tz.setDefault('Asia/Shanghai')
 
+// Weeks are starting from monday
+// https://github.com/iamkun/dayjs/issues/215#issuecomment-471280396
+dayjs.Ls.en.weekStart = 1
+
 const isChinese = navigator.language.includes('zh')
 
 const label = isChinese
