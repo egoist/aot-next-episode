@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import prettyMs from 'pretty-ms'
 import { ref, computed, onMounted } from 'vue'
 
+dayjs.extend(utc)
 dayjs.extend(timezone)
 
 // Weeks are starting from monday
