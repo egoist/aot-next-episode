@@ -6,8 +6,6 @@ import { ref, computed, onMounted } from 'vue'
 
 dayjs.extend(timezone)
 
-dayjs.tz.setDefault('Asia/Shanghai')
-
 // Weeks are starting from monday
 // https://github.com/iamkun/dayjs/issues/215#issuecomment-471280396
 dayjs.Ls.en.weekStart = 1
@@ -22,7 +20,7 @@ const tip = isChinese
   ? `根据中文字幕发布时间预估`
   : `Based on the release time of English Sub`
 
-const now = ref(dayjs())
+const now = ref(dayjs().tz('Asia/Shanghai')
 
 const prettyTime = computed(() => {
   const timeInThisWeek = now.value.startOf('week').add(2, 'hour')
@@ -41,7 +39,7 @@ const prettyTime = computed(() => {
 
 onMounted(() => {
   setInterval(() => {
-    now.value = dayjs()
+    now.value = dayjs().tz('Asia/Shanghai')
   }, 1000)
 })
 </script>
