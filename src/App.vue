@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
 import prettyMs from 'pretty-ms'
 import { ref, computed, onMounted } from 'vue'
+
+dayjs.extend(timezone)
+
+dayjs.tz.setDefault('Asia/Shanghai')
 
 const isChinese = navigator.language.includes('zh')
 
