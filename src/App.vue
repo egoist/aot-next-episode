@@ -28,7 +28,7 @@ const prettyTime = computed(() => {
   const timeInThisWeek = now.value.startOf('week').add(2, 'hour')
   let remaining = ref(0)
   if (now.value.isBefore(timeInThisWeek)) {
-    remaining.value = now.value.diff(timeInThisWeek)
+    remaining.value = timeInThisWeek.diff(now.value)
   } else {
     const timeInNextWeek = now.value
       .add(7, 'day')
