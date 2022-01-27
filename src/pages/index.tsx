@@ -61,13 +61,12 @@ export default function HomePage({ zh }: { zh: boolean }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={desc} />
-        <meta name="og:description" content={desc} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={img.src} />
         <meta name="twitter:description" content={desc} />
-        <meta name="og:title" content={title} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="og:image" content={img.src} />
-        <meta name="twitter:image" content={img.src} />
       </Head>
       <div className="text-center flex items-center h-screen justify-center">
         <div className="-mt-10">
